@@ -1,0 +1,42 @@
+{
+    "adsApp": {
+        "post" : {
+            "home": {
+                "title": "Posts",
+                "createLabel": "Thêm mới một Post",
+                "createOrEditLabel": "Thêm mới hoặc cập nhật Post"
+            },
+            "created": "Một Post mới được tạo với định danh {{ param }}",
+            "updated": "Một Post cập nhật với định danh {{ param }}",
+            "deleted": "Một Post đã xóa với định danh {{ param }}",
+            "delete": {
+                "question": "Bạn có chắc là muốn xóa Post {{ id }}?"
+            },
+            "detail": {
+                "title": "Post"
+            },
+            "message": "Message",
+            "pageId": "Page Id",
+            "pageName": "Page Name",
+            "category": "Category",
+            "categories": "Categories",
+            "link": "Link",
+            "picture": "Picture",
+            "fullPicture": "Full Picture",
+            "shareCount": "Share Count",
+            "reactionsCount": "Reactions Count",
+            "commentCount": "Comment Count",
+            "likeCount": "Like Count",
+            "loveCount": "Love Count",
+            "wowCount": "Wow Count",
+            "hahaCount": "Haha Count",
+            "sadCount": "Sad Count",
+            "angryCount": "Angry Count",
+            "thankfulCount": "Thankful Count",
+            "createdDate": "Created Date",
+            "createdBy": "Created By",
+            "modifiedDate": "Modified Date",
+            "modifiedBy": "Modified By"
+        }
+    }
+}

@@ -1,0 +1,107 @@
+
+<div>
+    <h2><span data-translate="adsApp.post.detail.title">Post</span> {{vm.post.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="adsApp.post.message">Message</span></dt>
+        <dd>
+            <span>{{vm.post.message}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.pageId">Page Id</span></dt>
+        <dd>
+            <span>{{vm.post.pageId}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.pageName">Page Name</span></dt>
+        <dd>
+            <span>{{vm.post.pageName}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.category">Category</span></dt>
+        <dd>
+            <span>{{vm.post.category}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.categories">Categories</span></dt>
+        <dd>
+            <span>{{vm.post.categories}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.link">Link</span></dt>
+        <dd>
+            <span>{{vm.post.link}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.picture">Picture</span></dt>
+        <dd>
+            <span>{{vm.post.picture}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.fullPicture">Full Picture</span></dt>
+        <dd>
+            <span>{{vm.post.fullPicture}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.shareCount">Share Count</span></dt>
+        <dd>
+            <span>{{vm.post.shareCount}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.reactionsCount">Reactions Count</span></dt>
+        <dd>
+            <span>{{vm.post.reactionsCount}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.commentCount">Comment Count</span></dt>
+        <dd>
+            <span>{{vm.post.commentCount}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.likeCount">Like Count</span></dt>
+        <dd>
+            <span>{{vm.post.likeCount}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.loveCount">Love Count</span></dt>
+        <dd>
+            <span>{{vm.post.loveCount}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.wowCount">Wow Count</span></dt>
+        <dd>
+            <span>{{vm.post.wowCount}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.hahaCount">Haha Count</span></dt>
+        <dd>
+            <span>{{vm.post.hahaCount}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.sadCount">Sad Count</span></dt>
+        <dd>
+            <span>{{vm.post.sadCount}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.angryCount">Angry Count</span></dt>
+        <dd>
+            <span>{{vm.post.angryCount}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.thankfulCount">Thankful Count</span></dt>
+        <dd>
+            <span>{{vm.post.thankfulCount}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.createdDate">Created Date</span></dt>
+        <dd>
+            <span>{{vm.post.createdDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.createdBy">Created By</span></dt>
+        <dd>
+            <span>{{vm.post.createdBy}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.modifiedDate">Modified Date</span></dt>
+        <dd>
+            <span>{{vm.post.modifiedDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.modifiedBy">Modified By</span></dt>
+        <dd>
+            <span>{{vm.post.modifiedBy}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="post-detail.edit({id:vm.post.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,32 @@
+entity Post {
+	message String,
+    pageId String maxlength(45),
+    pageName String maxlength(45),
+    category String maxlength(250),
+    categories String maxlength(250),
+    link_ String maxlength(250),
+    picture String maxlength(500),
+    fullPicture String maxlength(500),
+    shareCount Long max(20),
+    reactionsCount Long max(20),
+    commentCount Long max(20),
+    likeCount Long max(20),
+    loveCount Long max(20),
+    wowCount Long max(20),
+    hahaCount Long max(20),
+    sadCount Long max(20),
+    angryCount Long max(20),
+    thankfulCount Long max(20),
+    createdDate ZonedDateTime,
+    createdBy String,
+    modifiedDate ZonedDateTime,
+    modifiedBy String
+}
+// Set pagination options
+paginate Post with infinite-scroll
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Post
+
