@@ -11,7 +11,7 @@ import java.util.Objects;
  */
 public class PostDTO implements Serializable {
 
-    private Long id;
+    private String id;
 
     private String message;
 
@@ -28,7 +28,7 @@ public class PostDTO implements Serializable {
     private String categories;
 
     @Size(max = 250)
-    private String link;
+    private String postLink;
 
     @Size(max = 500)
     private String picture;
@@ -66,19 +66,21 @@ public class PostDTO implements Serializable {
     @Max(value = 20)
     private Long thankfulCount;
 
-    private ZonedDateTime createdDate;
+    private ZonedDateTime createdTime;
 
-    private String createdBy;
+    private ZonedDateTime createdDateRecord;
 
-    private ZonedDateTime modifiedDate;
+    private String createdByRecord;
 
-    private String modifiedBy;
+    private ZonedDateTime modifiedDateRecord;
 
-    public Long getId() {
+    private String modifiedByRecord;
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -122,12 +124,12 @@ public class PostDTO implements Serializable {
         this.categories = categories;
     }
 
-    public String getLink() {
-        return link;
+    public String getPostLink() {
+        return postLink;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setPostLink(String postLink) {
+        this.postLink = postLink;
     }
 
     public String getPicture() {
@@ -226,36 +228,44 @@ public class PostDTO implements Serializable {
         this.thankfulCount = thankfulCount;
     }
 
-    public ZonedDateTime getCreatedDate() {
-        return createdDate;
+    public ZonedDateTime getCreatedTime() {
+        return createdTime;
     }
 
-    public void setCreatedDate(ZonedDateTime createdDate) {
-        this.createdDate = createdDate;
+    public void setCreatedTime(ZonedDateTime createdTime) {
+        this.createdTime = createdTime;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
+    public ZonedDateTime getCreatedDateRecord() {
+        return createdDateRecord;
     }
 
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
+    public void setCreatedDateRecord(ZonedDateTime createdDateRecord) {
+        this.createdDateRecord = createdDateRecord;
     }
 
-    public ZonedDateTime getModifiedDate() {
-        return modifiedDate;
+    public String getCreatedByRecord() {
+        return createdByRecord;
     }
 
-    public void setModifiedDate(ZonedDateTime modifiedDate) {
-        this.modifiedDate = modifiedDate;
+    public void setCreatedByRecord(String createdByRecord) {
+        this.createdByRecord = createdByRecord;
     }
 
-    public String getModifiedBy() {
-        return modifiedBy;
+    public ZonedDateTime getModifiedDateRecord() {
+        return modifiedDateRecord;
     }
 
-    public void setModifiedBy(String modifiedBy) {
-        this.modifiedBy = modifiedBy;
+    public void setModifiedDateRecord(ZonedDateTime modifiedDateRecord) {
+        this.modifiedDateRecord = modifiedDateRecord;
+    }
+
+    public String getModifiedByRecord() {
+        return modifiedByRecord;
+    }
+
+    public void setModifiedByRecord(String modifiedByRecord) {
+        this.modifiedByRecord = modifiedByRecord;
     }
 
     @Override
@@ -288,7 +298,7 @@ public class PostDTO implements Serializable {
             ", pageName='" + getPageName() + "'" +
             ", category='" + getCategory() + "'" +
             ", categories='" + getCategories() + "'" +
-            ", link='" + getLink() + "'" +
+            ", postLink='" + getPostLink() + "'" +
             ", picture='" + getPicture() + "'" +
             ", fullPicture='" + getFullPicture() + "'" +
             ", shareCount='" + getShareCount() + "'" +
@@ -301,10 +311,11 @@ public class PostDTO implements Serializable {
             ", sadCount='" + getSadCount() + "'" +
             ", angryCount='" + getAngryCount() + "'" +
             ", thankfulCount='" + getThankfulCount() + "'" +
-            ", createdDate='" + getCreatedDate() + "'" +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", modifiedDate='" + getModifiedDate() + "'" +
-            ", modifiedBy='" + getModifiedBy() + "'" +
+            ", createdTime='" + getCreatedTime() + "'" +
+            ", createdDateRecord='" + getCreatedDateRecord() + "'" +
+            ", createdByRecord='" + getCreatedByRecord() + "'" +
+            ", modifiedDateRecord='" + getModifiedDateRecord() + "'" +
+            ", modifiedByRecord='" + getModifiedByRecord() + "'" +
             "}";
     }
 }

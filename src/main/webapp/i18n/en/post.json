@@ -20,7 +20,7 @@
             "pageName": "Page Name",
             "category": "Category",
             "categories": "Categories",
-            "link": "Link",
+            "postLink": "Post Link",
             "picture": "Picture",
             "fullPicture": "Full Picture",
             "shareCount": "Share Count",
@@ -33,10 +33,11 @@
             "sadCount": "Sad Count",
             "angryCount": "Angry Count",
             "thankfulCount": "Thankful Count",
-            "createdDate": "Created Date",
-            "createdBy": "Created By",
-            "modifiedDate": "Modified Date",
-            "modifiedBy": "Modified By"
+            "createdTime": "Created Time",
+            "createdDateRecord": "Created Date Record",
+            "createdByRecord": "Created By Record",
+            "modifiedDateRecord": "Modified Date Record",
+            "modifiedByRecord": "Modified By Record"
         }
     }
 }

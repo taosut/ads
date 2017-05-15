@@ -1,0 +1,28 @@
+<div>
+    <div class="row" infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+        <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="post in vm.posts track by post.id">
+            <div class="thumbnail col-sm-12">
+                <img class="col-sm-6" src="{{post.picture}}">
+                <div class="col-sm-6">
+                    <ul class="list-inline">
+                        <li><span class="glyphicon glyphicon-thumbs-up">{{post.likeCount}}K</span></li>
+                        <li><span class="glyphicon glyphicon-comment">{{post.commentCount}}K</span></li>
+                        <li><span class="glyphicon glyphicon glyphicon-share-alt">{{post.shareCount}}K</span></li>
+                    </ul>
+                    <p style="font-size: 13px">
+                        Ad Posted On : 123456
+                    </p>
+                    <!--<div class="caption">-->
+                    <b>{{post.pageName}}</b>
+                    <p>{{post.message | limitTo:100}}</p>
+                    <!--<a href="#" class="btn btn-default btn-xs pull-right" role="button"><i
+                        class="glyphicon glyphicon-edit"></i></a> <a href="#" class="btn btn-info btn-xs" role="button">Button</a>
+                    <a href="#" class="btn btn-default btn-xs" role="button">Button</a>-->
+                    <!--</div>-->
+                    <b>Ad posted from:</b><a href="{{post.postLink}}" target="_blank">Go To FB Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

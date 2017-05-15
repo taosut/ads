@@ -109,7 +109,7 @@
                                 pageName: null,
                                 category: null,
                                 categories: null,
-                                link: null,
+                                postLink: null,
                                 picture: null,
                                 fullPicture: null,
                                 shareCount: null,
@@ -122,10 +122,11 @@
                                 sadCount: null,
                                 angryCount: null,
                                 thankfulCount: null,
-                                createdDate: null,
-                                createdBy: null,
-                                modifiedDate: null,
-                                modifiedBy: null,
+                                createdTime: null,
+                                createdDateRecord: null,
+                                createdByRecord: null,
+                                modifiedDateRecord: null,
+                                modifiedByRecord: null,
                                 id: null
                             };
                         }

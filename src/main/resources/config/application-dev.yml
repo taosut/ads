@@ -37,6 +37,9 @@ spring:
         url: jdbc:mysql://35.185.171.177:3306/fb_ads?useUnicode=true&characterEncoding=utf8&useSSL=false
         username: dovd
         password: Ntui@123123
+        #url: jdbc:mysql://localhost:3306/ads?useUnicode=true&characterEncoding=utf8&useSSL=false
+        #username: root
+        #password: root
         hikari:
             data-source-properties:
                 cachePrepStmts: true

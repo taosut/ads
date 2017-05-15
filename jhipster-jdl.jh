@@ -4,7 +4,7 @@ entity Post {
     pageName String maxlength(45),
     category String maxlength(250),
     categories String maxlength(250),
-    link_ String maxlength(250),
+    postLink String maxlength(250),
     picture String maxlength(500),
     fullPicture String maxlength(500),
     shareCount Long max(20),
@@ -17,10 +17,11 @@ entity Post {
     sadCount Long max(20),
     angryCount Long max(20),
     thankfulCount Long max(20),
-    createdDate ZonedDateTime,
-    createdBy String,
-    modifiedDate ZonedDateTime,
-    modifiedBy String
+    createdTime ZonedDateTime,
+    createdDateRecord ZonedDateTime,
+    createdByRecord String,
+    modifiedDateRecord ZonedDateTime,
+    modifiedByRecord String
 }
 // Set pagination options
 paginate Post with infinite-scroll

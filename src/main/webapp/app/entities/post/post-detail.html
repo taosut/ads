@@ -24,9 +24,9 @@
         <dd>
             <span>{{vm.post.categories}}</span>
         </dd>
-        <dt><span data-translate="adsApp.post.link">Link</span></dt>
+        <dt><span data-translate="adsApp.post.postLink">Post Link</span></dt>
         <dd>
-            <span>{{vm.post.link}}</span>
+            <span>{{vm.post.postLink}}</span>
         </dd>
         <dt><span data-translate="adsApp.post.picture">Picture</span></dt>
         <dd>
@@ -76,21 +76,25 @@
         <dd>
             <span>{{vm.post.thankfulCount}}</span>
         </dd>
-        <dt><span data-translate="adsApp.post.createdDate">Created Date</span></dt>
+        <dt><span data-translate="adsApp.post.createdTime">Created Time</span></dt>
         <dd>
-            <span>{{vm.post.createdDate | date:'medium'}}</span>
+            <span>{{vm.post.createdTime | date:'medium'}}</span>
         </dd>
-        <dt><span data-translate="adsApp.post.createdBy">Created By</span></dt>
+        <dt><span data-translate="adsApp.post.createdDateRecord">Created Date Record</span></dt>
         <dd>
-            <span>{{vm.post.createdBy}}</span>
+            <span>{{vm.post.createdDateRecord | date:'medium'}}</span>
         </dd>
-        <dt><span data-translate="adsApp.post.modifiedDate">Modified Date</span></dt>
+        <dt><span data-translate="adsApp.post.createdByRecord">Created By Record</span></dt>
         <dd>
-            <span>{{vm.post.modifiedDate | date:'medium'}}</span>
+            <span>{{vm.post.createdByRecord}}</span>
         </dd>
-        <dt><span data-translate="adsApp.post.modifiedBy">Modified By</span></dt>
+        <dt><span data-translate="adsApp.post.modifiedDateRecord">Modified Date Record</span></dt>
         <dd>
-            <span>{{vm.post.modifiedBy}}</span>
+            <span>{{vm.post.modifiedDateRecord | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="adsApp.post.modifiedByRecord">Modified By Record</span></dt>
+        <dd>
+            <span>{{vm.post.modifiedByRecord}}</span>
         </dd>
     </dl>
 

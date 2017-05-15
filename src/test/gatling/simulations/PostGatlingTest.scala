@@ -68,7 +68,7 @@ class PostGatlingTest extends Simulation {
             .exec(http("Create new post")
             .post("/api/posts")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "message":"SAMPLE_TEXT", "pageId":"SAMPLE_TEXT", "pageName":"SAMPLE_TEXT", "category":"SAMPLE_TEXT", "categories":"SAMPLE_TEXT", "link":"SAMPLE_TEXT", "picture":"SAMPLE_TEXT", "fullPicture":"SAMPLE_TEXT", "shareCount":null, "reactionsCount":null, "commentCount":null, "likeCount":null, "loveCount":null, "wowCount":null, "hahaCount":null, "sadCount":null, "angryCount":null, "thankfulCount":null, "createdDate":"2020-01-01T00:00:00.000Z", "createdBy":"SAMPLE_TEXT", "modifiedDate":"2020-01-01T00:00:00.000Z", "modifiedBy":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "message":"SAMPLE_TEXT", "pageId":"SAMPLE_TEXT", "pageName":"SAMPLE_TEXT", "category":"SAMPLE_TEXT", "categories":"SAMPLE_TEXT", "postLink":"SAMPLE_TEXT", "picture":"SAMPLE_TEXT", "fullPicture":"SAMPLE_TEXT", "shareCount":null, "reactionsCount":null, "commentCount":null, "likeCount":null, "loveCount":null, "wowCount":null, "hahaCount":null, "sadCount":null, "angryCount":null, "thankfulCount":null, "createdTime":"2020-01-01T00:00:00.000Z", "createdDateRecord":"2020-01-01T00:00:00.000Z", "createdByRecord":"SAMPLE_TEXT", "modifiedDateRecord":"2020-01-01T00:00:00.000Z", "modifiedByRecord":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_post_url"))).exitHereIfFailed
             .pause(10)

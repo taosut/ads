@@ -68,13 +68,13 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="adsApp.post.link" for="field_link">Link</label>
-            <input type="text" class="form-control" name="link" id="field_link"
-                    ng-model="vm.post.link"
+            <label class="control-label" data-translate="adsApp.post.postLink" for="field_postLink">Post Link</label>
+            <input type="text" class="form-control" name="postLink" id="field_postLink"
+                    ng-model="vm.post.postLink"
                     ng-maxlength="250"/>
-            <div ng-show="editForm.link.$invalid">
+            <div ng-show="editForm.postLink.$invalid">
                 <p class="help-block"
-                    ng-show="editForm.link.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="250">
+                    ng-show="editForm.postLink.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="250">
                     This field cannot be longer than 250 characters.
                 </p>
             </div>
@@ -264,35 +264,45 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="adsApp.post.createdDate" for="field_createdDate">Created Date</label>
+            <label class="control-label" data-translate="adsApp.post.createdTime" for="field_createdTime">Created Time</label>
                 <div class="input-group">
-                    <input id="field_createdDate" type="text" class="form-control" name="createdDate" datetime-picker="{{dateformat}}" ng-model="vm.post.createdDate" is-open="vm.datePickerOpenStatus.createdDate"
+                    <input id="field_createdTime" type="text" class="form-control" name="createdTime" datetime-picker="{{dateformat}}" ng-model="vm.post.createdTime" is-open="vm.datePickerOpenStatus.createdTime"
                     />
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createdDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createdTime')"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
                 </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="adsApp.post.createdBy" for="field_createdBy">Created By</label>
-            <input type="text" class="form-control" name="createdBy" id="field_createdBy"
-                    ng-model="vm.post.createdBy"
-                    />
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="adsApp.post.modifiedDate" for="field_modifiedDate">Modified Date</label>
+            <label class="control-label" data-translate="adsApp.post.createdDateRecord" for="field_createdDateRecord">Created Date Record</label>
                 <div class="input-group">
-                    <input id="field_modifiedDate" type="text" class="form-control" name="modifiedDate" datetime-picker="{{dateformat}}" ng-model="vm.post.modifiedDate" is-open="vm.datePickerOpenStatus.modifiedDate"
+                    <input id="field_createdDateRecord" type="text" class="form-control" name="createdDateRecord" datetime-picker="{{dateformat}}" ng-model="vm.post.createdDateRecord" is-open="vm.datePickerOpenStatus.createdDateRecord"
                     />
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('modifiedDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createdDateRecord')"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
                 </div>
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="adsApp.post.modifiedBy" for="field_modifiedBy">Modified By</label>
-            <input type="text" class="form-control" name="modifiedBy" id="field_modifiedBy"
-                    ng-model="vm.post.modifiedBy"
+            <label class="control-label" data-translate="adsApp.post.createdByRecord" for="field_createdByRecord">Created By Record</label>
+            <input type="text" class="form-control" name="createdByRecord" id="field_createdByRecord"
+                    ng-model="vm.post.createdByRecord"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="adsApp.post.modifiedDateRecord" for="field_modifiedDateRecord">Modified Date Record</label>
+                <div class="input-group">
+                    <input id="field_modifiedDateRecord" type="text" class="form-control" name="modifiedDateRecord" datetime-picker="{{dateformat}}" ng-model="vm.post.modifiedDateRecord" is-open="vm.datePickerOpenStatus.modifiedDateRecord"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('modifiedDateRecord')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="adsApp.post.modifiedByRecord" for="field_modifiedByRecord">Modified By Record</label>
+            <input type="text" class="form-control" name="modifiedByRecord" id="field_modifiedByRecord"
+                    ng-model="vm.post.modifiedByRecord"
                     />
         </div>
 

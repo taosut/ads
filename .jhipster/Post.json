@@ -39,7 +39,7 @@
             "fieldValidateRulesMaxlength": 250
         },
         {
-            "fieldName": "link",
+            "fieldName": "postLink",
             "fieldType": "String",
             "fieldValidateRules": [
                 "maxlength"
@@ -143,19 +143,23 @@
             "fieldValidateRulesMax": 20
         },
         {
-            "fieldName": "createdDate",
+            "fieldName": "createdTime",
             "fieldType": "ZonedDateTime"
         },
         {
-            "fieldName": "createdBy",
+            "fieldName": "createdDateRecord",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createdByRecord",
             "fieldType": "String"
         },
         {
-            "fieldName": "modifiedDate",
+            "fieldName": "modifiedDateRecord",
             "fieldType": "ZonedDateTime"
         },
         {
-            "fieldName": "modifiedBy",
+            "fieldName": "modifiedByRecord",
             "fieldType": "String"
         }
     ],

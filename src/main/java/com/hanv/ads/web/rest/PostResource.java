@@ -37,7 +37,7 @@ public class PostResource {
     private final Logger log = LoggerFactory.getLogger(PostResource.class);
 
     private static final String ENTITY_NAME = "post";
-        
+
     private final PostRepository postRepository;
 
     private final PostMapper postMapper;
@@ -65,7 +65,7 @@ public class PostResource {
         post = postRepository.save(post);
         PostDTO result = postMapper.toDto(post);
         return ResponseEntity.created(new URI("/api/posts/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
+            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId()))
             .body(result);
     }
 
@@ -89,7 +89,7 @@ public class PostResource {
         post = postRepository.save(post);
         PostDTO result = postMapper.toDto(post);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, postDTO.getId().toString()))
+            .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, postDTO.getId()))
             .body(result);
     }
 
@@ -103,7 +103,7 @@ public class PostResource {
     @Timed
     public ResponseEntity<List<PostDTO>> getAllPosts(@ApiParam Pageable pageable) {
         log.debug("REST request to get a page of Posts");
-        Page<Post> page = postRepository.findAll(pageable);
+        Page<Post> page = postRepository.findAllByOrderByLikeCountDesc(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/posts");
         return new ResponseEntity<>(postMapper.toDto(page.getContent()), headers, HttpStatus.OK);
     }
@@ -116,7 +116,7 @@ public class PostResource {
      */
     @GetMapping("/posts/{id}")
     @Timed
-    public ResponseEntity<PostDTO> getPost(@PathVariable Long id) {
+    public ResponseEntity<PostDTO> getPost(@PathVariable String id) {
         log.debug("REST request to get Post : {}", id);
         Post post = postRepository.findOne(id);
         PostDTO postDTO = postMapper.toDto(post);
@@ -131,10 +131,10 @@ public class PostResource {
      */
     @DeleteMapping("/posts/{id}")
     @Timed
-    public ResponseEntity<Void> deletePost(@PathVariable Long id) {
+    public ResponseEntity<Void> deletePost(@PathVariable String id) {
         log.debug("REST request to delete Post : {}", id);
         postRepository.delete(id);
-        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
+        return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id)).build();
     }
 
 }

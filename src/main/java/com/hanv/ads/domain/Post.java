@@ -20,8 +20,8 @@ public class Post implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String id;
 
     @Column(name = "message")
     private String message;
@@ -43,8 +43,8 @@ public class Post implements Serializable {
     private String categories;
 
     @Size(max = 250)
-    @Column(name = "link_", length = 250)
-    private String link;
+    @Column(name = "post_link", length = 250)
+    private String postLink;
 
     @Size(max = 500)
     @Column(name = "picture", length = 500)
@@ -54,63 +54,66 @@ public class Post implements Serializable {
     @Column(name = "full_picture", length = 500)
     private String fullPicture;
 
-    //@Max(value = 20)
+    @Max(value = 20)
     @Column(name = "share_count")
     private Long shareCount;
 
-    //@Max(value = 20)
+    @Max(value = 20)
     @Column(name = "reactions_count")
     private Long reactionsCount;
 
-    //@Max(value = 20)
+    @Max(value = 20)
     @Column(name = "comment_count")
     private Long commentCount;
 
-    //@Max(value = 20)
+    @Max(value = 20)
     @Column(name = "like_count")
     private Long likeCount;
 
-    //@Max(value = 20)
+    @Max(value = 20)
     @Column(name = "love_count")
     private Long loveCount;
 
-    //@Max(value = 20)
+    @Max(value = 20)
     @Column(name = "wow_count")
     private Long wowCount;
 
-    //@Max(value = 20)
+    @Max(value = 20)
     @Column(name = "haha_count")
     private Long hahaCount;
 
-    //@Max(value = 20)
+    @Max(value = 20)
     @Column(name = "sad_count")
     private Long sadCount;
 
-    //@Max(value = 20)
+    @Max(value = 20)
     @Column(name = "angry_count")
     private Long angryCount;
 
-    //@Max(value = 20)
+    @Max(value = 20)
     @Column(name = "thankful_count")
     private Long thankfulCount;
 
-    @Column(name = "created_date")
-    private ZonedDateTime createdDate;
+    @Column(name = "created_time")
+    private ZonedDateTime createdTime;
 
-    @Column(name = "created_by")
-    private String createdBy;
+    @Column(name = "created_date_record")
+    private ZonedDateTime createdDateRecord;
 
-    @Column(name = "modified_date")
-    private ZonedDateTime modifiedDate;
+    @Column(name = "created_by_record")
+    private String createdByRecord;
 
-    @Column(name = "modified_by")
-    private String modifiedBy;
+    @Column(name = "modified_date_record")
+    private ZonedDateTime modifiedDateRecord;
 
-    public Long getId() {
+    @Column(name = "modified_by_record")
+    private String modifiedByRecord;
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -179,17 +182,17 @@ public class Post implements Serializable {
         this.categories = categories;
     }
 
-    public String getLink() {
-        return link;
+    public String getPostLink() {
+        return postLink;
     }
 
-    public Post link(String link) {
-        this.link = link;
+    public Post postLink(String postLink) {
+        this.postLink = postLink;
         return this;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setPostLink(String postLink) {
+        this.postLink = postLink;
     }
 
     public String getPicture() {
@@ -348,56 +351,69 @@ public class Post implements Serializable {
         this.thankfulCount = thankfulCount;
     }
 
-    public ZonedDateTime getCreatedDate() {
-        return createdDate;
+    public ZonedDateTime getCreatedTime() {
+        return createdTime;
     }
 
-    public Post createdDate(ZonedDateTime createdDate) {
-        this.createdDate = createdDate;
+    public Post createdTime(ZonedDateTime createdTime) {
+        this.createdTime = createdTime;
         return this;
     }
 
-    public void setCreatedDate(ZonedDateTime createdDate) {
-        this.createdDate = createdDate;
+    public void setCreatedTime(ZonedDateTime createdTime) {
+        this.createdTime = createdTime;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
+    public ZonedDateTime getCreatedDateRecord() {
+        return createdDateRecord;
     }
 
-    public Post createdBy(String createdBy) {
-        this.createdBy = createdBy;
+    public Post createdDateRecord(ZonedDateTime createdDateRecord) {
+        this.createdDateRecord = createdDateRecord;
         return this;
     }
 
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
+    public void setCreatedDateRecord(ZonedDateTime createdDateRecord) {
+        this.createdDateRecord = createdDateRecord;
     }
 
-    public ZonedDateTime getModifiedDate() {
-        return modifiedDate;
+    public String getCreatedByRecord() {
+        return createdByRecord;
     }
 
-    public Post modifiedDate(ZonedDateTime modifiedDate) {
-        this.modifiedDate = modifiedDate;
+    public Post createdByRecord(String createdByRecord) {
+        this.createdByRecord = createdByRecord;
         return this;
     }
 
-    public void setModifiedDate(ZonedDateTime modifiedDate) {
-        this.modifiedDate = modifiedDate;
+    public void setCreatedByRecord(String createdByRecord) {
+        this.createdByRecord = createdByRecord;
     }
 
-    public String getModifiedBy() {
-        return modifiedBy;
+    public ZonedDateTime getModifiedDateRecord() {
+        return modifiedDateRecord;
     }
 
-    public Post modifiedBy(String modifiedBy) {
-        this.modifiedBy = modifiedBy;
+    public Post modifiedDateRecord(ZonedDateTime modifiedDateRecord) {
+        this.modifiedDateRecord = modifiedDateRecord;
         return this;
     }
 
-    public void setModifiedBy(String modifiedBy) {
-        this.modifiedBy = modifiedBy;
+    public void setModifiedDateRecord(ZonedDateTime modifiedDateRecord) {
+        this.modifiedDateRecord = modifiedDateRecord;
+    }
+
+    public String getModifiedByRecord() {
+        return modifiedByRecord;
+    }
+
+    public Post modifiedByRecord(String modifiedByRecord) {
+        this.modifiedByRecord = modifiedByRecord;
+        return this;
+    }
+
+    public void setModifiedByRecord(String modifiedByRecord) {
+        this.modifiedByRecord = modifiedByRecord;
     }
 
     @Override
@@ -429,7 +445,7 @@ public class Post implements Serializable {
             ", pageName='" + getPageName() + "'" +
             ", category='" + getCategory() + "'" +
             ", categories='" + getCategories() + "'" +
-            ", link='" + getLink() + "'" +
+            ", postLink='" + getPostLink() + "'" +
             ", picture='" + getPicture() + "'" +
             ", fullPicture='" + getFullPicture() + "'" +
             ", shareCount='" + getShareCount() + "'" +
@@ -442,10 +458,11 @@ public class Post implements Serializable {
             ", sadCount='" + getSadCount() + "'" +
             ", angryCount='" + getAngryCount() + "'" +
             ", thankfulCount='" + getThankfulCount() + "'" +
-            ", createdDate='" + getCreatedDate() + "'" +
-            ", createdBy='" + getCreatedBy() + "'" +
-            ", modifiedDate='" + getModifiedDate() + "'" +
-            ", modifiedBy='" + getModifiedBy() + "'" +
+            ", createdTime='" + getCreatedTime() + "'" +
+            ", createdDateRecord='" + getCreatedDateRecord() + "'" +
+            ", createdByRecord='" + getCreatedByRecord() + "'" +
+            ", modifiedDateRecord='" + getModifiedDateRecord() + "'" +
+            ", modifiedByRecord='" + getModifiedByRecord() + "'" +
             "}";
     }
 }

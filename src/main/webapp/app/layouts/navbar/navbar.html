@@ -9,7 +9,7 @@
             </button>
             <a class="navbar-brand logo" href="#/" ng-click="vm.collapseNavbar()">
                 <img class="logo-img" src="content/images/fb-ads-logo.png" alt="logo"/>
-                <span data-translate="global.title">Ads</span> <span class="navbar-version">v{{VERSION}}</span>
+                <span data-translate="global.title">Ads</span> <!--<span class="navbar-version">v{{VERSION}}</span>-->
             </a>
         </div>
         <div class="navbar-collapse" uib-collapse="vm.isNavbarCollapsed" ng-switch="vm.isAuthenticated()">
@@ -64,6 +64,43 @@
                             </span>
                         </span>
                     </a>
+                </li>
+                <li ng-class="{active: vm.$state.includes('account')}" uib-dropdown class="dropdown pointer">
+                    <a class="dropdown-toggle" uib-dropdown-toggle href="">
+                        <span>
+                            <!--<span class="glyphicon glyphicon-user"></span>-->
+                            <span class="hidden-sm">
+                                Filter
+                            </span>
+                            <b class="caret"></b>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu" uib-dropdown-menu >
+                        <li ui-sref-active="active" ng-switch-when="true">
+                            <a ng-click="vm.sortByLikes()" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-wrench"></span>&nbsp;
+                                <span>Sort by Likes</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active" ng-switch-when="true">
+                            <a ng-click="vm.sortByShares()" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-lock"></span>&nbsp;
+                                <span>Sort by Shares</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active" ng-switch-when="true">
+                            <a ng-click="vm.sortByComments()" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-cloud"></span>&nbsp;
+                                <span>Sort by Comments</span>
+                            </a>
+                        </li>
+                        <li ui-sref-active="active" ng-switch-when="false">
+                            <a ng-click="vm.sortByPublisher()" ng-click="vm.collapseNavbar()">
+                                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;
+                                <span>Sort by Publisher</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <!--<li ui-sref-active="active">
                     <a ui-sref="home" ng-click="vm.collapseNavbar()">
@@ -216,7 +253,7 @@
 
 <style>
     .navbar-default {
-        background-color: #3b5998 !important;
+        background-color: #222 !important;
     }
     .navbar-default .navbar-nav > li > a {
         color: #fff !important;
@@ -226,5 +263,13 @@
     }
     .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
         background-color: #3b5998 !important;
+    }
+
+    .navbar-nav > li > a {
+        line-height: 40px;
+    }
+
+    .navbar-brand.logo {
+        padding: 14px 15px;
     }
 </style>

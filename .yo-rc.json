@@ -29,7 +29,7 @@
     "testFrameworks": [
       "gatling"
     ],
-    "jhiPrefix": "jhi",
+    "jhiPrefix": "ads",
     "enableTranslation": true,
     "nativeLanguage": "en",
     "languages": [

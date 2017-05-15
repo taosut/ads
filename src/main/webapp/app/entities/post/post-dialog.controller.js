@@ -43,8 +43,9 @@
             vm.isSaving = false;
         }
 
-        vm.datePickerOpenStatus.createdDate = false;
-        vm.datePickerOpenStatus.modifiedDate = false;
+        vm.datePickerOpenStatus.createdTime = false;
+        vm.datePickerOpenStatus.createdDateRecord = false;
+        vm.datePickerOpenStatus.modifiedDateRecord = false;
 
         function openCalendar (date) {
             vm.datePickerOpenStatus[date] = true;
