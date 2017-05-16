@@ -1,17 +1,16 @@
 <div>
     <div class="row" infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
-        <div class="col-xs-12 col-sm-6 col-md-4" ng-repeat="post in vm.posts track by post.id">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-custom" ng-repeat="post in vm.posts track by post.id">
             <div class="thumbnail col-sm-12">
-                <img class="col-sm-6" src="{{post.picture}}">
-                <div class="col-sm-6">
+                <img class="col-sm-6 thumbnail-img" src="{{post.fullPicture}}">
+                <div class="col-sm-6 thumbnail-info">
                     <ul class="list-inline">
-                        <li><span class="glyphicon glyphicon-thumbs-up">{{post.likeCount}}K</span></li>
-                        <li><span class="glyphicon glyphicon-comment">{{post.commentCount}}K</span></li>
-                        <li><span class="glyphicon glyphicon glyphicon-share-alt">{{post.shareCount}}K</span></li>
+                        <li><span class="glyphicon glyphicon-thumbs-up">{{post.likeCount | convertToK}}</span></li>
+                        <li><span class="glyphicon glyphicon-comment">{{post.commentCount | convertToK}}</span></li>
+                        <li><span class="glyphicon glyphicon glyphicon-share-alt">{{post.shareCount | convertToK}}</span></li>
                     </ul>
-                    <p style="font-size: 13px">
-                        Ad Posted On : 123456
-                    </p>
+                    <span class="glyphicon glyphicon-time">{{post.createdTime | date:'yyyy-MM-dd'}}</span>
+                    <br/>
                     <!--<div class="caption">-->
                     <b>{{post.pageName}}</b>
                     <p>{{post.message | limitTo:100}}</p>
@@ -25,4 +24,32 @@
         </div>
     </div>
 </div>
+
+<style>
+    .col-custom{
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+    .col-custom .thumbnail{
+        height: 250px;
+        padding: 0px;
+        margin-bottom: 10px;
+    }
+    .col-custom .thumbnail img{
+        max-height: 250px;
+    }
+    .col-custom .thumbnail .thumbnail-info{
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+        margin-top: 10px;
+    }
+    .col-custom .thumbnail .thumbnail-img{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .col-custom p{
+        word-break: break-all;
+        white-space: inherit !important;
+    }
+</style>
 
